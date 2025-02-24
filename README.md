@@ -1,1 +1,2 @@
-### CC3074 - Mineria de Datos - Proyecto 2
+# CC3074 - Mineria de Datos - Proyecto 2
+## Modelos de Regresión Lineal
