@@ -1,7 +1,7 @@
 # CC3074 - Mineria de Datos - Proyecto 2
 ## Modelos de Regresión Lineal
 ### Integrantes
-* Cindy Gualim
+* Cindy Gualim, 21226
 * Luis Pedro Montenegro
 * Josúe Say
 * Ana Laura Tschen 221645
