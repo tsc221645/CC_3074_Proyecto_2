@@ -1,3 +1,16 @@
+---
+header-includes:
+  - \usepackage{amsmath}
+  - \usepackage{amssymb}
+  - \usepackage{fontspec}
+  - \setmainfont{FiraCode Nerd Font}
+  - \usepackage{setspace}
+  - \setstretch{1.5}
+  - \usepackage{fvextra}
+  - \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
+geometry: top=0.67in, bottom=0.67in, left=0.85in, right=0.85in
+---
+
 # Modelos de Regresión Lineal
 
 ## Información de la Empresa
@@ -94,3 +107,4 @@ Cada semana, se generan y entregan resultados basados en la aplicación de algor
 ## Enlaces
 
 - [**Información del DataSet**](https://www.kaggle.com/c/house-prices-advanced-regression-techniques/data)
+- [**Repositorio**](https://github.com/tsc221645/CC_3074_Proyecto_2)
