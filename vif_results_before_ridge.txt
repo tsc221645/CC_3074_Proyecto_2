@@ -1,0 +1,86 @@
+VIF por cada variable antes de Ridge:
+     Variable          VIF
+     1stFlrSF          inf
+   BsmtFinSF2          inf
+    BsmtUnfSF          inf
+  TotalBsmtSF          inf
+   BsmtFinSF1          inf
+ LowQualFinSF          inf
+    GrLivArea          inf
+     2ndFlrSF          inf
+       YrSold 24950.030149
+ YearRemodAdd 22332.624673
+  GarageYrBlt 21842.676882
+    YearBuilt 21117.558499
+ TotRmsAbvGrd    88.087846
+  OverallQual    78.009231
+  OverallCond    41.834559
+   GarageCars    38.467199
+ KitchenAbvGr    37.579297
+    SalePrice    33.800723
+   GarageArea    33.657392
+ BedroomAbvGr    33.554720
+     FullBath    27.362553
+  LotFrontage    16.803362
+       MoSold     6.896539
+   MSSubClass     4.851772
+ BsmtFullBath     3.702751
+     HalfBath     3.339426
+   Fireplaces     3.046512
+      LotArea     2.541514
+   MasVnrArea     1.931607
+   WoodDeckSF     1.926881
+  OpenPorchSF     1.856789
+EnclosedPorch     1.457646
+ BsmtHalfBath     1.231752
+  ScreenPorch     1.228617
+     PoolArea     1.152690
+    3SsnPorch     1.046197
+      MiscVal     1.038300
+
+Resumen:
+Variables con VIF > 10 (Alta multicolinealidad): 22
+    Variable          VIF
+ LotFrontage    16.803362
+ OverallQual    78.009231
+ OverallCond    41.834559
+   YearBuilt 21117.558499
+YearRemodAdd 22332.624673
+  BsmtFinSF1          inf
+  BsmtFinSF2          inf
+   BsmtUnfSF          inf
+ TotalBsmtSF          inf
+    1stFlrSF          inf
+    2ndFlrSF          inf
+LowQualFinSF          inf
+   GrLivArea          inf
+    FullBath    27.362553
+BedroomAbvGr    33.554720
+KitchenAbvGr    37.579297
+TotRmsAbvGrd    88.087846
+ GarageYrBlt 21842.676882
+  GarageCars    38.467199
+  GarageArea    33.657392
+      YrSold 24950.030149
+   SalePrice    33.800723
+
+Variables con 5 ≤ VIF ≤ 10 (Multicolinealidad moderada): 1
+Variable      VIF
+  MoSold 6.896539
+
+Variables con VIF < 5 (Sin problemas de multicolinealidad): 14
+     Variable      VIF
+   MSSubClass 4.851772
+      LotArea 2.541514
+   MasVnrArea 1.931607
+ BsmtFullBath 3.702751
+ BsmtHalfBath 1.231752
+     HalfBath 3.339426
+   Fireplaces 3.046512
+   WoodDeckSF 1.926881
+  OpenPorchSF 1.856789
+EnclosedPorch 1.457646
+    3SsnPorch 1.046197
+  ScreenPorch 1.228617
+     PoolArea 1.152690
+      MiscVal 1.038300
