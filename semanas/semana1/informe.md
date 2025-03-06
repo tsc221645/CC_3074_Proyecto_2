@@ -1,4 +1,28 @@
+---
+header-includes:
+  - \usepackage{amsmath}
+  - \usepackage{amssymb}
+  - \usepackage{fontspec}
+  - \setmainfont{FiraCode Nerd Font}
+  - \usepackage{setspace}
+  - \setstretch{1.5}
+  - \usepackage{fvextra}
+  - \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
+geometry: top=0.67in, bottom=0.67in, left=0.85in, right=0.85in
+---
+
 # Análisis de Predicción de Precios de Viviendas
+
+## Integrantes
+
+- Ana Tschen - 221645
+- Cindy Gualim - 21226
+- Josúe Say - 22801
+- Luis Montenegro - 21699
+
+## Enlaces
+
+- [**Repositorio**](https://github.com/tsc221645/CC_3074_Proyecto_2.git)
 
 ## 1. Introducción
 
@@ -115,7 +139,16 @@ El método del **codo** fue utilizado para determinar el mejor número de cluste
 
 ![Método del Codo](./images/metodo_codo.png)
 
-- Se observa que **k=4** es un buen valor, ya que después de este punto la reducción de inercia se desacelera.
+1. El algoritmo K-Means fue utilizado para segmentar las viviendas en diferentes grupos basándose en características clave, como el área habitable (GrLivArea) y el precio de venta (SalePrice). El objetivo es identificar patrones en los datos y clasificar las casas en categorías similares.
+2. Se observa que **k=4** es un buen valor, ya que después de este punto la reducción de inercia se desacelera.
+3. **Segmentación de Casas en Clusters**
+   - **Cluster 0 (rojo):** Viviendas de tamaño medio con precios moderados.
+   - **Cluster 1 (azul):** Viviendas pequeñas con precios bajos.
+   - **Cluster 2 (verde):** Viviendas grandes con precios altos.
+   - **Cluster 3 (morado):** Viviendas con características atípicas o fuera del rango común (outliers).
+
+4. **Coeficiente de Silhouette = 0.54**
+   - Mide la calidad de la segmentación siendo un valr aceptable para indicar la separación de los clúster.
 
 ### **Segmentación de Casas**
 
@@ -250,14 +283,52 @@ $$ \text{RSS} + \lambda \sum_{j=1}^{p} |\beta_j| $$
 
 Las fuentes utilizadas fueron [**Rige Regression de IBM**](https://www.ibm.com/es-es/think/topics/ridge-regression) y el enfoque [**VIF para Multicolinealida**](https://datatab.es/tutorial/multicollinearity)
 
-## 13. Evaluación del Modelo con el Conjunto de Prueba
+## **Evaluación de Modelos en el Conjunto de Prueba**  
 
-*Aún no realizado.*
+Se evaluaron distintos modelos predictivos con el conjunto de prueba para determinar cuál predice mejor el precio de las casas. Las métricas utilizadas para evaluar la calidad de la predicción fueron:
 
-## 14. Comparación de Modelos y Discusión
+- **Error Cuadrático Medio (MSE)**: Indica el error promedio al cuadrado en las predicciones.
+- **Raíz del Error Cuadrático Medio (RMSE)**: Muestra el error promedio en las unidades originales del precio.
+- **Coeficiente de Determinación (R²)**: Representa la proporción de la variabilidad de `SalePrice` explicada por el modelo.
 
-*Aún no realizado.*
+### **Resultados de los Modelos en el Conjunto de Prueba**
 
-## 15. Conclusiones y Recomendaciones
+| Modelo                    | MSE | RMSE | R² |
+|---------------------------|---------------------|---------------------|------------------|
+| **Regresión Univariada** (`OverallQual`) | **2.88 × 10⁹** | **53,737** | **0.62** |
+| **Regresión Multivariable (MCO)** | **5.23 × 10⁻²¹** | **7.23 × 10⁻¹¹** | **1.00** |
 
-*Aún no realizado.*
+#### **Análisis de los Resultados**
+
+1. **Regresión Univariada (`OverallQual`)**  
+   - Tuvo un MSE de **2.88 × 10⁹**, lo que indica que el modelo tiene errores significativos en la predicción del precio.
+   - Un **R² de 0.62** sugiere que la variable `OverallQual` tiene una buena relación con el precio, pero **no es suficiente por sí sola para hacer predicciones precisas**.
+   - **Gráfica de predicción vs. valores reales**:
+     - Se observa que los valores predichos **se alejan bastante de los valores reales**, especialmente en precios altos.
+
+2. **Regresión Multivariable (MCO)**  
+   - Obtuvo un **R² de 1.00**, lo que sugiere **sobreajuste**: el modelo memorizó los datos de entrenamiento en lugar de aprender patrones generales.
+   - Aunque tiene un **MSE extremadamente bajo (5.23 × 10⁻²¹)**, su desempeño en datos nuevos podría ser deficiente.
+   - **Gráfica de residuos**:
+     - Se observa que los residuos tienen una distribución poco natural, lo que confirma el sobreajuste.
+
+3. **Regresiones Ridge y Lasso**  
+   - No fueron evaluadas en el conjunto de prueba directamente, pero Ridge ayudó a reducir la multicolinealidad y Lasso eliminó variables irrelevantes.
+4. Se utilizó el algoritmo **K-Means** para segmentar las viviendas en grupos con características similares, empleando el **área habitable (GrLivArea)** y el **precio de venta (SalePrice)** como principales variables de segmentación.
+   - Se determinó un **k óptimo de 4 clusters** utilizando el método del codo.
+   - El **coeficiente de silueta** obtenido fue de **0.54**, indicando una segmentación aceptable.
+   - **Cada cluster representa un segmento del mercado inmobiliario**, diferenciando viviendas por tamaño y precio.
+
+    | Cluster | Características |
+    |---------|----------------|
+    | **0 (rojo)** | Viviendas de tamaño medio con precios moderados. |
+    | **1 (azul)** | Viviendas pequeñas con precios bajos. |
+    | **2 (verde)** | Viviendas grandes con precios altos. |
+    | **3 (morado)** | Viviendas con características atípicas o fuera del rango común (posibles outliers). |
+
+### **¿Cuál es el Mejor Modelo?**
+
+- **El modelo univariado es simple y tiene baja precisión**, ya que solo usa `OverallQual` como predictor.
+- **El modelo multivariable (OLS) tiene sobreajuste** y no es confiable para datos nuevos.
+- **Regresiones Ridge y Lasso son prometedoras** pero requieren evaluación en el conjunto de prueba.
+- **Árboles de decisión y Random Forest podrían ser opciones viables**, ya que manejan mejor relaciones no lineales.
