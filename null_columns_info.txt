@@ -1,0 +1,6 @@
+2, LotFrontage, 217, Continua
+8, MasVnrArea, 6, Continua
+32, GarageYrBlt, 64, Discreta
+
+Total registros con valores nulos: 279
+Total valores nulos en el DataFrame: 287
