@@ -1,40 +1,40 @@
 VIF por cada variable después de Ridge (Alpha=100):
      Variable          VIF
    Ridge_Pred          inf
- LowQualFinSF          inf
     SalePrice          inf
-       YrSold 1.474795e+08
-    YearBuilt 3.971635e+07
- YearRemodAdd 1.415338e+07
-  GarageYrBlt 6.682349e+06
-   BsmtFinSF2 5.438978e+06
-  OverallQual 1.656691e+06
-   BsmtFinSF1 7.236831e+05
-  TotalBsmtSF 2.594651e+05
- TotRmsAbvGrd 1.442483e+05
- BedroomAbvGr 8.457450e+04
-  OverallCond 7.422365e+04
-   GarageCars 6.461240e+04
-     2ndFlrSF 6.228642e+04
-   MSSubClass 2.824943e+04
-    BsmtUnfSF 1.892188e+04
-     1stFlrSF 1.861449e+04
-    GrLivArea 1.800185e+04
-  LotFrontage 1.323886e+04
- KitchenAbvGr 8.062897e+03
- BsmtFullBath 6.783484e+03
-      LotArea 6.474154e+03
-   MasVnrArea 3.389280e+03
-   Fireplaces 2.516840e+03
-     FullBath 2.511161e+03
-  ScreenPorch 1.851724e+03
-   WoodDeckSF 1.717203e+03
-     HalfBath 2.561677e+02
-    3SsnPorch 2.320871e+02
-       MoSold 1.857737e+02
-   GarageArea 1.234051e+02
-     PoolArea 1.056014e+02
-EnclosedPorch 5.994857e+01
-  OpenPorchSF 3.271386e+01
-      MiscVal 2.254972e+01
- BsmtHalfBath 1.376817e+01
+       YrSold 1.306500e+08
+    YearBuilt 3.454418e+07
+  GarageYrBlt 7.274566e+06
+   BsmtFinSF2 2.966013e+06
+  OverallQual 1.718838e+06
+ YearRemodAdd 1.228571e+06
+ LowQualFinSF 1.196081e+06
+     2ndFlrSF 1.677352e+05
+ TotRmsAbvGrd 1.277035e+05
+    GrLivArea 7.672797e+04
+ BedroomAbvGr 7.192936e+04
+   GarageCars 6.494359e+04
+  OverallCond 5.679242e+04
+   MSSubClass 2.852332e+04
+   BsmtFinSF1 2.641306e+04
+    BsmtUnfSF 1.704655e+04
+  LotFrontage 1.123264e+04
+  TotalBsmtSF 1.012393e+04
+ KitchenAbvGr 7.181128e+03
+      LotArea 6.649910e+03
+ BsmtFullBath 5.719199e+03
+   MasVnrArea 3.402560e+03
+   Fireplaces 2.541268e+03
+     FullBath 2.450407e+03
+     1stFlrSF 2.353240e+03
+  ScreenPorch 1.855066e+03
+   WoodDeckSF 1.615805e+03
+    3SsnPorch 2.322682e+02
+     HalfBath 2.308549e+02
+       MoSold 1.827192e+02
+   GarageArea 1.079405e+02
+     PoolArea 1.073855e+02
+EnclosedPorch 5.363126e+01
+  OpenPorchSF 3.180261e+01
+      MiscVal 2.256470e+01
+ BsmtHalfBath 1.306990e+01
